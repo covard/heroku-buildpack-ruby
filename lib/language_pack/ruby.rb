@@ -716,6 +716,11 @@ https://devcenter.heroku.com/articles/ruby-versions#your-ruby-version-is-x-but-y
         FileUtils.rm_rf(dir)
       end
       bundler.clean
+
+      if bundler.has_gem?('yui-compressor') || bundler.has_gem?('closure-compressor') && !ruby_version.jruby?
+        install_jvm(true)
+        ENV["PATH"] += ":bin"
+      end
     end
   end
 

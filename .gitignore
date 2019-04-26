@@ -4,6 +4,7 @@ vendor/bundler/*
 vendor/bundle/*
 .env
 .ruby-version
+.ruby-gemset
 buildpacks/*
 .anvil/
 tmp/*.log
